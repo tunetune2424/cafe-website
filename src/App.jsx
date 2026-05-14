@@ -7,6 +7,7 @@ import {
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
+import Admin from './pages/Admin'
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <Route path='/' element={<Home />} />
       <Route path='/menu' element={<div>Menu</div>} />
       <Route path='/access' element={<div>Access</div>} />
-      <Route path='/admin' element={<div>Admin</div>} />
+      <Route path='/admin' element={<Admin />} />
     </Routes>
     <Footer />
     </BrowserRouter>
