@@ -7,7 +7,10 @@ function Admin() {
     const [publishedAt, setPublishedAt] = useState('')
 
     const fetchNews = () => {
-        fetch(`${import.meta.env.VITE_API_URL}/api/news/admin`)
+        const token = localStorage.getItem('token')
+        fetch(`${import.meta.env.VITE_API_URL}/api/news/admin`, {
+            headers: { 'Authorization' : `Bearer ${token}` }
+        })
             .then(res => res.json())
             .then(data => setNewsList(data))
     }
@@ -20,9 +23,13 @@ function Admin() {
         e.preventDefault()
         fetch(`${import.meta.env.VITE_API_URL}/api/news/admin`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            },
             body: JSON.stringify({ title, body, publishedAt })
         })
+        
             .then(res => res.json())
             .then(() => {
                 setTitle('')
@@ -33,7 +40,10 @@ function Admin() {
     }
 
     const handleDelete = (id) => {
-        fetch(`${import.meta.env.VITE_API_URL}/api/news/admin/${id}`, { method: 'DELETE' })
+        fetch(`${import.meta.env.VITE_API_URL}/api/news/admin/${id}`, {
+            method: 'DELETE',
+            headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+        })
             .then(() => fetchNews())
     }
 

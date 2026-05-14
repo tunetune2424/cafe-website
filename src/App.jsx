@@ -1,15 +1,18 @@
 import {
   BrowserRouter,
   Routes,
-  Route
+  Route,
+  Navigate
 } from 'react-router-dom'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import Admin from './pages/Admin'
+import Login from './pages/Login'
 
 function App() {
+  const token = localStorage.getItem('token')
   return (
     <BrowserRouter>
     <Header />
@@ -17,7 +20,8 @@ function App() {
       <Route path='/' element={<Home />} />
       <Route path='/menu' element={<div>Menu</div>} />
       <Route path='/access' element={<div>Access</div>} />
-      <Route path='/admin' element={<Admin />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/admin' element={token ? <Admin /> : <Navigate to='/login' />} />
     </Routes>
     <Footer />
     </BrowserRouter>
