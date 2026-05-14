@@ -1,4 +1,14 @@
+import { useState, useEffect } from 'react'
+
 function Home() {
+    const [news, setNews] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:3001/api/news')
+        .then(res => res.json())
+        .then(data => setNews(data))
+    }, [])
+
     return (
         <main>
             {/* Hero */}
@@ -144,19 +154,16 @@ function Home() {
                         <span className="block font-serif text-[28px] text-[#2C1A0E] tracking-[0.15em] mt-2">お知らせ</span>
                     </div>
                     <div className="border-t border-[rgba(44,26,14,0.15)]">
-                        {[
-                            { date: '2026.05.10', title: 'ゴールデンウィーク営業のお知らせ' },
-                            { date: '2026.04.25', title: '春の新メニューが登場しました' },
-                            { date: '2026.04.01', title: '4月の定休日について' },
-                        ].map(({ date, title }) => (
-                            <div key={date} className="flex items-baseline gap-8 py-5 border-b border-[rgba(44,26,14,0.1)]">
+                        {news.map((item) => (
+                            <div key={item._id} className="flex items-baseline gap-8 py-5 border-b border-[rgba(44,26,14,0.1)]">
                                 <span className="text-xs text-[#7A5C42] tracking-[0.1em] whitespace-nowrap min-w-[80px]">
-                                    {date}
+                                    {new Date(item.publishedAt).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '.')}
                                 </span>
-                                <span className="text-sm text-[#2C1A0E] tracking-[0.05em]">{title}</span>
+                                <span className="text-sm text-[#2C1A0E] tracking-[0.05em]">{item.title}</span>
                             </div>
                         ))}
                     </div>
+
                 </div>
             </section>
 
