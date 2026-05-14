@@ -51,7 +51,7 @@ function Home() {
 
             {/* About */}
             <section className="py-24 px-8">
-                <div className="max-w-[960px] mx-auto grid grid-cols-2 gap-16 items-center">
+                <div className="max-w-[960px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                     <div className="aspect-[4/3] bg-[#c8a882] relative overflow-hidden">
                         <span className="absolute inset-0 flex items-center justify-center text-[rgba(250,246,239,0.5)] text-sm tracking-[0.2em]">
                             店内風景
@@ -85,7 +85,7 @@ function Home() {
                         <p className="text-xs tracking-[0.35em] text-[#7A5C42]">MENU</p>
                         <span className="block font-serif text-[28px] text-[#2C1A0E] tracking-[0.15em] mt-2">お食事・お飲み物</span>
                     </div>
-                    <div className="grid grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
                             { name: 'ヒラヤーチー', desc: '沖縄の家庭料理。野菜たっぷりのお好み焼き風の一品。やちむんの器でどうぞ。', bg: 'linear-gradient(135deg,#d4a96a,#c8855a)' },
                             { name: '黒糖ぜんざい', desc: '沖縄の定番スイーツ。コクのある黒糖の甘みと金時豆が絶妙な一杯。', bg: 'linear-gradient(135deg,#6b3a2a,#a05c3c)' },
@@ -118,7 +118,7 @@ function Home() {
                         <p className="text-xs tracking-[0.35em] text-[#7A5C42]">GALLERY</p>
                         <span className="block font-serif text-[28px] text-[#2C1A0E] tracking-[0.15em] mt-2">ギャラリー</span>
                     </div>
-                    <div className="grid grid-cols-4 gap-3">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                         {[
                             { label: '店内風景', bg: 'linear-gradient(135deg,#8B7355,#6B5A45)', wide: false },
                             { label: '料理', bg: 'linear-gradient(135deg,#C1603A,#9A4A28)', wide: false },
@@ -173,7 +173,7 @@ function Home() {
                     <p className="text-xs tracking-[0.35em] text-[#7A5C42]">ACCESS</p>
                     <span className="block font-serif text-[28px] text-[#2C1A0E] tracking-[0.15em] mt-2">アクセス</span>
                 </div>
-                <div className="max-w-[960px] mx-auto grid grid-cols-2 gap-12 items-start">
+                <div className="max-w-[960px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                     <div className="aspect-[4/3] bg-[linear-gradient(135deg,#c8d8c0_0%,#a8c0a0_100%)] relative flex flex-col items-center justify-center gap-3">
                         <span className="text-4xl">📍</span>
                         <p className="text-xs tracking-[0.15em] text-[#7A5C42]">Google Maps 埋め込みエリア</p>
