@@ -7,7 +7,7 @@ function Admin() {
     const [publishedAt, setPublishedAt] = useState('')
 
     const fetchNews = () => {
-        fetch('http://localhost:3001/api/news/admin')
+        fetch(`${import.meta.env.VITE_API_URL}/api/news/admin`)
             .then(res => res.json())
             .then(data => setNewsList(data))
     }
@@ -18,7 +18,7 @@ function Admin() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch('http://localhost:3001/api/news/admin', {
+        fetch(`${import.meta.env.VITE_API_URL}/api/news/admin`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ title, body, publishedAt })
@@ -33,7 +33,7 @@ function Admin() {
     }
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:3001/api/news/admin/${id}`, { method: 'DELETE' })
+        fetch(`${import.meta.env.VITE_API_URL}/api/news/admin/${id}`, { method: 'DELETE' })
             .then(() => fetchNews())
     }
 
