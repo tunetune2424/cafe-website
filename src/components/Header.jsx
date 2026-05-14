@@ -16,9 +16,9 @@ function Header() {
     <header className="fixed top-0 left-0 w-full z-50 bg-[rgba(250,246,239,0.92)] backdrop-blur-sm border-b border-[rgba(193,96,58,0.15)]">
       <div className="max-w-[1100px] mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="font-serif text-sm text-[#2C1A0E] tracking-widest no-underline">
-          やちむん喫茶 シーサー園
+          縁側喫茶 むすび庵
           <em className="block not-italic text-[10px] text-[#7A5C42] tracking-[0.2em]">
-            YACHIMUN KISSA SHISA-EN
+            ENGAWA KISSA MUSUBI-AN
           </em>
         </Link>
 

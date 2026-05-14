@@ -49,7 +49,7 @@ function Admin() {
 
     return (
         <main className="max-w-[720px] mx-auto py-16 px-8">
-            <h1 className="font-serif text-2xl mb-10 text-[#2C1A0E]">管理画面 — お知らせ</h1>
+            <h1 className="font-serif text-2xl mb-10 text-[#2C1A0E]">むすび庵 — 管理画面</h1>
 
             <form onSubmit={handleSubmit} className="mb-12 flex flex-col gap-4">
                 <input

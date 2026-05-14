@@ -23,14 +23,14 @@ function Home() {
                 />
                 <div className="relative text-center text-[#FAF6EF] px-6">
                     <p className="text-xs tracking-[0.4em] text-[rgba(250,246,239,0.75)] mb-5">
-                        OKINAWA / MOTOBU / YANBARU
+                        NAGANO / SATOYAMA / KOMINKA
                     </p>
                     <h1 className="font-serif text-4xl leading-relaxed tracking-widest mb-3"
                         style={{ textShadow: '0 2px 16px rgba(44,26,14,0.4)' }}>
-                        時間がゆっくり流れる、<br />やんばるの隠れ家
+                        時間がゆっくり流れる、<br />里山の隠れ家
                     </h1>
                     <p className="text-sm tracking-[0.35em] text-[rgba(250,246,239,0.85)] mb-12">
-                        やちむん喫茶 シーサー園
+                        縁側喫茶 むすび庵
                     </p>
                     <div className="flex gap-4 justify-center flex-wrap">
                         <a href="#menu"
@@ -59,16 +59,16 @@ function Home() {
                     </div>
                     <div>
                         <h2 className="font-serif text-[22px] leading-[1.7] mb-6 text-[#3D5A3E]">
-                            やんばるの空気と<br />やちむんの器でととのう時間を
+                            里山の空気と縁側で<br />ととのう、ゆるやかな時間を
                         </h2>
                         <p className="text-[#7A5C42] mb-4 leading-[2]">
-                            沖縄の伝統工芸「やちむん」の器に盛られた料理と、深緑に包まれた空間。観光の疲れを癒す隠れ家へようこそ。
+                            築100年の古民家をリノベーションした隠れ家カフェ。四季折々の里山の景色を眺めながら、手しごとの料理とお茶でゆったりとした時間をお過ごしください。
                         </p>
                         <p className="text-[#7A5C42] mb-4 leading-[2]">
-                            創業1990年。一万坪の広大な敷地に建つ古民家で、約100体のシーサーがお出迎えします。
+                            創業2010年。地元の農家から直接仕入れた野菜や果物を使い、毎日丁寧に仕込んでいます。
                         </p>
                         <div className="flex flex-wrap gap-2 mt-6">
-                            {['古民家カフェ', 'やちむん', 'やんばる', '沖縄工芸'].map(tag => (
+                            {['古民家カフェ', '縁側', '里山', '手しごと'].map(tag => (
                                 <span key={tag} className="text-[11px] px-3.5 py-1 border border-[#3D5A3E] text-[#3D5A3E] tracking-[0.15em]">
                                     {tag}
                                 </span>
@@ -87,10 +87,10 @@ function Home() {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
-                            { name: 'ヒラヤーチー', desc: '沖縄の家庭料理。野菜たっぷりのお好み焼き風の一品。やちむんの器でどうぞ。', bg: 'linear-gradient(135deg,#d4a96a,#c8855a)' },
-                            { name: '黒糖ぜんざい', desc: '沖縄の定番スイーツ。コクのある黒糖の甘みと金時豆が絶妙な一杯。', bg: 'linear-gradient(135deg,#6b3a2a,#a05c3c)' },
-                            { name: 'シークヮーサー生ジュース', desc: '庭で採れた果実を使用。爽やかな酸味が口いっぱいに広がります。', bg: 'linear-gradient(135deg,#7aad5c,#4a8c3c)' },
-                            { name: 'シークヮーサーケーキ', desc: '数量限定・売り切れ次第終了。お早めに。', bg: 'linear-gradient(135deg,#e8c87a,#d4a040)' },
+                            { name: '季節の野菜定食', desc: '地元農家から直送の旬野菜を使った日替わり定食。土の恵みをそのままに。', bg: 'linear-gradient(135deg,#d4a96a,#c8855a)' },
+                            { name: '自家製あんこのぜんざい', desc: '毎朝丁寧に炊き上げた粒あんと、やわらかいお餅の組み合わせ。', bg: 'linear-gradient(135deg,#6b3a2a,#a05c3c)' },
+                            { name: '地元産ハーブティー', desc: '庭で育てたハーブをブレンド。季節によって香りが変わります。', bg: 'linear-gradient(135deg,#7aad5c,#4a8c3c)' },
+                            { name: '手作りわらびもち', desc: '数量限定・売り切れ次第終了。きな粉と黒蜜でどうぞ。', bg: 'linear-gradient(135deg,#e8c87a,#d4a040)' },
                         ].map(({ name, desc, bg }) => (
                             <div key={name} className="bg-[#FAF6EF] overflow-hidden hover:-translate-y-1 transition-transform duration-300">
                                 <div className="aspect-[4/3] relative flex items-center justify-center"
@@ -187,13 +187,13 @@ function Home() {
                         </a>
                     </div>
                     <div>
-                        <h3 className="font-serif text-lg mb-7 text-[#3D5A3E]">やちむん喫茶 シーサー園</h3>
+                        <h3 className="font-serif text-lg mb-7 text-[#3D5A3E]">縁側喫茶 むすび庵</h3>
                         <table className="w-full border-collapse">
                             {[
-                                { label: '住所', value: '沖縄県国頭郡本部町伊豆味1439' },
-                                { label: '電話', value: '0980-47-2160' },
+                                { label: '住所', value: '長野県上伊那郡飯島町田切123（架空）' },
+                                { label: '電話', value: '0265-00-0000（架空）' },
                                 { label: '営業時間', value: '11:00 〜 L.O. 16:30 / Close 17:00' },
-                                { label: '定休日', value: '月・火・第3日曜日' },
+                                { label: '定休日', value: '火・水曜日' },
                             ].map(({ label, value }) => (
                                 <tr key={label} className="border-b border-[rgba(44,26,14,0.1)]">
                                     <td className="py-3.5 text-[11px] tracking-[0.15em] text-[#7A5C42] w-20 align-top pt-4">{label}</td>
@@ -202,7 +202,7 @@ function Home() {
                             ))}
                         </table>
                         <div className="mt-6 text-xs text-[#7A5C42] leading-[1.9] p-4 bg-[rgba(61,90,62,0.06)] border-l-2 border-[#3D5A3E]">
-                            駐車場あり。やんばる自然の中に位置するため、カーナビ使用の場合は電話番号での検索を推奨します。
+                            駐車場あり。里山の細道に位置するため、カーナビ使用の場合は電話番号での検索を推奨します。
                         </div>
                     </div>
                 </div>
