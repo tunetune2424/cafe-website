@@ -1,6 +1,6 @@
-# やちむん喫茶 シーサー園 — カフェホームページ
+# 縁側喫茶 むすび庵 — カフェホームページ
 
-沖縄テイストのカフェをイメージした架空のホームページです。お知らせの投稿・管理機能とJWT認証を実装しています。
+長野の里山にある古民家カフェをイメージした架空のホームページです。お知らせ管理・JWT認証・予約機能を実装しています。
 
 ## デモ
 
@@ -20,10 +20,16 @@
 
 ## 主な機能
 
-- **ホームページ** — Hero / About / Menu / Gallery / お知らせ / Access セクション
-- **お知らせ表示** — MongoDB から取得したお知らせをトップページに表示
-- **管理画面** — お知らせの投稿・削除（ログイン必須）
-- **JWT認証** — ログインするとトークンを発行、管理画面を保護
+| 機能 | 状態 |
+|---|---|
+| ホームページ（Hero / About / Menu / Gallery / お知らせ / Access） | ✅ 実装済み |
+| お知らせ表示（MongoDB 連携） | ✅ 実装済み |
+| 管理画面（お知らせ投稿・削除） | ✅ 実装済み |
+| JWT 認証（ログイン・保護ルート） | ✅ 実装済み |
+| 予約フォーム（名前・日時・人数等） | 🔨 実装中 |
+| 予約 API（POST / GET） | 🔨 実装中 |
+| 予約確認メール（Nodemailer） | 📋 予定 |
+| 管理画面 — 予約一覧・ステータス管理 | 📋 予定 |
 
 ## ディレクトリ構成
 
@@ -31,24 +37,27 @@
 cafe-website/
 ├── src/
 │   ├── pages/
-│   │   ├── Home.jsx       # トップページ
-│   │   ├── Admin.jsx      # 管理画面
-│   │   └── Login.jsx      # ログインページ
+│   │   ├── Home.jsx          # トップページ
+│   │   ├── Reservation.jsx   # 予約ページ（実装中）
+│   │   ├── Admin.jsx         # 管理画面
+│   │   └── Login.jsx         # ログインページ
 │   └── components/
 │       ├── Header.jsx
 │       └── Footer.jsx
 ├── server/
-│   ├── index.js           # Expressサーバー
+│   ├── index.js              # Express サーバー
 │   ├── models/
-│   │   ├── News.js        # お知らせスキーマ
-│   │   └── User.js        # ユーザースキーマ（bcryptハッシュ化）
+│   │   ├── News.js           # お知らせスキーマ
+│   │   ├── Reservation.js    # 予約スキーマ
+│   │   └── User.js           # ユーザースキーマ（bcrypt ハッシュ化）
 │   ├── routes/
-│   │   ├── news.js        # お知らせAPI（CRUD）
-│   │   └── auth.js        # 認証API
+│   │   ├── news.js           # お知らせ API（CRUD）
+│   │   ├── reservation.js    # 予約 API（実装中）
+│   │   └── auth.js           # 認証 API
 │   ├── middleware/
-│   │   └── auth.js        # JWT検証ミドルウェア
-│   └── seed.js            # 管理者ユーザー初期登録スクリプト
-└── vercel.json            # Vercel SPAルーティング設定
+│   │   └── auth.js           # JWT 検証ミドルウェア
+│   └── seed.js               # 管理者ユーザー初期登録スクリプト
+└── vercel.json               # Vercel SPA ルーティング設定
 ```
 
 ## API エンドポイント
@@ -61,12 +70,15 @@ cafe-website/
 | PUT | /api/news/admin/:id | お知らせ更新 | 必要 |
 | DELETE | /api/news/admin/:id | お知らせ削除 | 必要 |
 | POST | /api/auth/login | ログイン・トークン発行 | 不要 |
+| POST | /api/reservations | 予約作成 | 不要 |
+| GET | /api/reservations | 予約一覧取得 | 必要 |
+| PATCH | /api/reservations/:id | 予約ステータス更新 | 必要 |
 
 ## ローカル開発環境の構築
 
 ### 必要なもの
 
-- Node.js 18以上
+- Node.js 18 以上
 - MongoDB Atlas アカウント（または MongoDB ローカル）
 
 ### 手順
@@ -110,7 +122,7 @@ cd server
 node seed.js
 ```
 
-6. サーバーを起動（ターミナル2つ）
+6. サーバーを起動（ターミナル 2 つ）
 
 ```bash
 # バックエンド
