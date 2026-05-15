@@ -13,14 +13,14 @@ function Home() {
         <main>
             {/* Hero */}
             <section className="h-screen relative flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0"
-                    style={{
-                        background: `
-                linear-gradient(160deg, rgba(61,90,62,0.72) 0%, rgba(44,26,14,0.55) 60%, rgba(193,96,58,0.35) 100%),
-                repeating-linear-gradient(45deg, #3a5c38 0px, #3a5c38 2px, #4a7a48 2px, #4a7a48 12px)
-              `
-                    }}
-                />
+                <div className="absolute inset-0">
+                    <img 
+                        src="/images/hero.jpg" 
+                        alt="縁側喫茶むすび庵の外観 - 長野の里山に佇む古民家カフェ" 
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[rgba(61,90,62,0.5)] via-[rgba(44,26,14,0.4)] to-[rgba(44,26,14,0.6)]" />
+                </div>
                 <div className="relative text-center text-[#FAF6EF] px-6">
                     <p className="text-xs tracking-[0.4em] text-[rgba(250,246,239,0.75)] mb-5">
                         NAGANO / SATOYAMA / KOMINKA
@@ -52,10 +52,12 @@ function Home() {
             {/* About */}
             <section className="py-24 px-8">
                 <div className="max-w-[960px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                    <div className="aspect-[4/3] bg-[#c8a882] relative overflow-hidden">
-                        <span className="absolute inset-0 flex items-center justify-center text-[rgba(250,246,239,0.5)] text-sm tracking-[0.2em]">
-                            店内風景
-                        </span>
+                    <div className="aspect-[4/3] relative overflow-hidden">
+                        <img 
+                            src="/images/about-interior.jpg" 
+                            alt="縁側喫茶むすび庵の店内 - 築100年の古民家をリノベーション" 
+                            className="w-full h-full object-cover"
+                        />
                     </div>
                     <div>
                         <h2 className="font-serif text-[22px] leading-[1.7] mb-6 text-[#3D5A3E]">
@@ -87,15 +89,18 @@ function Home() {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
-                            { name: '季節の野菜定食', desc: '地元農家から直送の旬野菜を使った日替わり定食。土の恵みをそのままに。', bg: 'linear-gradient(135deg,#d4a96a,#c8855a)' },
-                            { name: '自家製あんこのぜんざい', desc: '毎朝丁寧に炊き上げた粒あんと、やわらかいお餅の組み合わせ。', bg: 'linear-gradient(135deg,#6b3a2a,#a05c3c)' },
-                            { name: '地元産ハーブティー', desc: '庭で育てたハーブをブレンド。季節によって香りが変わります。', bg: 'linear-gradient(135deg,#7aad5c,#4a8c3c)' },
-                            { name: '手作りわらびもち', desc: '数量限定・売り切れ次第終了。きな粉と黒蜜でどうぞ。', bg: 'linear-gradient(135deg,#e8c87a,#d4a040)' },
-                        ].map(({ name, desc, bg }) => (
+                            { name: '季節の野菜定食', desc: '地元農家から直送の旬野菜を使った日替わり定食。土の恵みをそのままに。', img: '/images/menu-teishoku.jpg' },
+                            { name: '自家製あんこのぜんざい', desc: '毎朝丁寧に炊き上げた粒あんと、やわらかいお餅の組み合わせ。', img: '/images/menu-zenzai.jpg' },
+                            { name: '地元産ハーブティー', desc: '庭で育てたハーブをブレンド。季節によって香りが変わります。', img: '/images/menu-herbtea.jpg' },
+                            { name: '手作りわらびもち', desc: '数量限定・売り切れ次第終了。きな粉と黒蜜でどうぞ。', img: '/images/menu-warabimochi.jpg' },
+                        ].map(({ name, desc, img }) => (
                             <div key={name} className="bg-[#FAF6EF] overflow-hidden hover:-translate-y-1 transition-transform duration-300">
-                                <div className="aspect-[4/3] relative flex items-center justify-center"
-                                    style={{ background: bg }}>
-                                    <span className="text-[12px] tracking-[0.15em] text-[rgba(250,246,239,0.7)]">料理イメージ</span>
+                                <div className="aspect-[4/3] relative overflow-hidden">
+                                    <img 
+                                        src={img} 
+                                        alt={name} 
+                                        className="w-full h-full object-cover"
+                                    />
                                 </div>
                                 <div className="p-5">
                                     <h3 className="font-serif text-[15px] mb-1.5 tracking-[0.08em]">{name}</h3>
@@ -120,25 +125,26 @@ function Home() {
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                         {[
-                            { label: '店内風景', bg: 'linear-gradient(135deg,#8B7355,#6B5A45)', wide: false },
-                            { label: '料理', bg: 'linear-gradient(135deg,#C1603A,#9A4A28)', wide: false },
-                            { label: 'やちむん', bg: 'linear-gradient(135deg,#3D5A3E,#2A4030)', wide: false },
-                            { label: '外観', bg: 'linear-gradient(135deg,#7A8C6A,#5A6C50)', wide: false },
-                            { label: 'テラス席', bg: 'linear-gradient(135deg,#B8956E,#9A7550)', wide: false },
-                            { label: '庭の全景', bg: 'linear-gradient(135deg,#4A6B4A,#2C4A2C)', wide: true },
-                            { label: 'シーサー', bg: 'linear-gradient(135deg,#8C6040,#6A4428)', wide: false },
-                        ].map(({ label, bg, wide }) => (
+                            { label: '店内風景', img: '/images/gallery-interior.jpg', wide: false },
+                            { label: '料理', img: '/images/gallery-food.jpg', wide: false },
+                            { label: 'やちむん', img: '/images/gallery-yachimun.jpg', wide: false },
+                            { label: '外観', img: '/images/gallery-exterior.jpg', wide: false },
+                            { label: 'テラス席', img: '/images/gallery-terrace.jpg', wide: false },
+                            { label: '庭の全景', img: '/images/gallery-garden.jpg', wide: true },
+                            { label: '置物', img: '/images/gallery-shisa.jpg', wide: false },
+                        ].map(({ label, img, wide }) => (
                             <div
                                 key={label}
                                 className={`relative overflow-hidden cursor-pointer group ${wide ? 'col-span-2 aspect-[2/1]' : 'aspect-square'}`}
-                                style={{ background: bg }}
                             >
+                                <img 
+                                    src={img} 
+                                    alt={label} 
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                />
                                 <div className="absolute inset-0 bg-[rgba(44,26,14,0.4)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-[#FAF6EF] text-xs tracking-[0.2em]">
                                     {label}
                                 </div>
-                                <span className="absolute bottom-3 left-3 text-[11px] text-[rgba(250,246,239,0.8)] tracking-[0.15em]">
-                                    {label}
-                                </span>
                             </div>
                         ))}
                     </div>
@@ -174,16 +180,20 @@ function Home() {
                     <span className="block font-serif text-[28px] text-[#2C1A0E] tracking-[0.15em] mt-2">アクセス</span>
                 </div>
                 <div className="max-w-[960px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                    <div className="aspect-[4/3] bg-[linear-gradient(135deg,#c8d8c0_0%,#a8c0a0_100%)] relative flex flex-col items-center justify-center gap-3">
-                        <span className="text-4xl">📍</span>
-                        <p className="text-xs tracking-[0.15em] text-[#7A5C42]">Google Maps 埋め込みエリア</p>
+                    <div className="aspect-[4/3] relative overflow-hidden group">
+                        <img 
+                            src="/images/map-placeholder.jpg" 
+                            alt="縁側喫茶むすび庵の周辺地図 - 長野県上伊那郡飯島町" 
+                            className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-[rgba(61,90,62,0.15)]" />
                         <a
-                            href="https://maps.google.com/?q=やちむん喫茶+シーサー園"
+                            href="https://maps.google.com/?q=長野県上伊那郡飯島町"
                             target="_blank"
                             rel="noreferrer"
-                            className="absolute bottom-4 text-[11px] tracking-[0.2em] text-[#C1603A] border-b border-[#C1603A] pb-0.5 no-underline whitespace-nowrap"
+                            className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[11px] tracking-[0.2em] text-[#FAF6EF] bg-[#C1603A] px-5 py-2.5 no-underline whitespace-nowrap hover:bg-[#a84f2e] transition-colors"
                         >
-                            Google Maps で開く →
+                            Google Maps で開く
                         </a>
                     </div>
                     <div>
@@ -202,7 +212,7 @@ function Home() {
                             ))}
                         </table>
                         <div className="mt-6 text-xs text-[#7A5C42] leading-[1.9] p-4 bg-[rgba(61,90,62,0.06)] border-l-2 border-[#3D5A3E]">
-                            駐車場あり。里山の細道に位置するため、カーナビ使用の場合は電話番号での検索を推奨します。
+                            駐車場あり。里山の細道に位置するため、カーナビ使用の場合は電話番号での検���を推奨します。
                         </div>
                     </div>
                 </div>
