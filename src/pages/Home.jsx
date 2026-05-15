@@ -180,16 +180,20 @@ function Home() {
                     <span className="block font-serif text-[28px] text-[#2C1A0E] tracking-[0.15em] mt-2">アクセス</span>
                 </div>
                 <div className="max-w-[960px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                    <div className="aspect-[4/3] bg-[linear-gradient(135deg,#c8d8c0_0%,#a8c0a0_100%)] relative flex flex-col items-center justify-center gap-3">
-                        <span className="text-4xl">📍</span>
-                        <p className="text-xs tracking-[0.15em] text-[#7A5C42]">Google Maps 埋め込みエリア</p>
+                    <div className="aspect-[4/3] relative overflow-hidden group">
+                        <img 
+                            src="/images/map-placeholder.jpg" 
+                            alt="縁側喫茶むすび庵の周辺地図 - 長野県上伊那郡飯島町" 
+                            className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-[rgba(61,90,62,0.15)]" />
                         <a
-                            href="https://maps.google.com/?q=やちむん喫茶+シーサー園"
+                            href="https://maps.google.com/?q=長野県上伊那郡飯島町"
                             target="_blank"
                             rel="noreferrer"
-                            className="absolute bottom-4 text-[11px] tracking-[0.2em] text-[#C1603A] border-b border-[#C1603A] pb-0.5 no-underline whitespace-nowrap"
+                            className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[11px] tracking-[0.2em] text-[#FAF6EF] bg-[#C1603A] px-5 py-2.5 no-underline whitespace-nowrap hover:bg-[#a84f2e] transition-colors"
                         >
-                            Google Maps で開く →
+                            Google Maps で開く
                         </a>
                     </div>
                     <div>
