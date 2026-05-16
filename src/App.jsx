@@ -10,6 +10,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Admin from './pages/Admin'
 import Login from './pages/Login'
+import Reservation from './pages/Reservation'
 
 function App() {
   const token = localStorage.getItem('token')
@@ -22,6 +23,7 @@ function App() {
       <Route path='/access' element={<div>Access</div>} />
       <Route path='/login' element={<Login />} />
       <Route path='/admin' element={token ? <Admin /> : <Navigate to='/login' />} />
+      <Route path='/reservation' element={<Reservation />}/>
     </Routes>
     <Footer />
     </BrowserRouter>
