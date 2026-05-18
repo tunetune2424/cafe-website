@@ -4,6 +4,7 @@ import auth from '../middleware/auth.js'
 
 const router = express.Router()
 
+// 予約作成（認証不要・お客様が送信）
 router.post('/' ,async (req, res) => {
   try{
     const reservation = new Reservation(req.body)
@@ -14,8 +15,7 @@ router.post('/' ,async (req, res) => {
   }
 } )
 
-
-
+// 予約一覧取得（管理者のみ・予約日昇順）
 router.get('/', auth, async (req, res) => {
   try {
     const reservations = await Reservation.find().sort({ date: 1 })
@@ -25,12 +25,13 @@ router.get('/', auth, async (req, res) => {
   }
 })
 
+// 予約ステータス更新（管理者のみ：pending / confirmed / cancelled）
 router.patch('/:id', auth, async (req, res) => {
   try {
     const reservation = await Reservation.findByIdAndUpdate(
       req.params.id,
       { status: req.body.status },
-      { new: true }
+      { new: true } // 更新後のドキュメントを返す
     )
     res.json(reservation)
   } catch (err) {
