@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function Home() {
     const [news, setNews] = useState([])
@@ -26,22 +27,28 @@ function Home() {
                     <p className="text-xs tracking-[0.4em] text-[rgba(250,246,239,0.75)] mb-5">
                         NAGANO / SATOYAMA / KOMINKA
                     </p>
-                    <h1 className="font-serif text-4xl leading-relaxed tracking-widest mb-3"
+                    <h1 className="font-serif text-2xl md:text-4xl leading-relaxed tracking-widest mb-3"
                         style={{ textShadow: '0 2px 16px rgba(44,26,14,0.4)' }}>
                         時間がゆっくり流れる、<br />里山の隠れ家
                     </h1>
                     <p className="text-sm tracking-[0.35em] text-[rgba(250,246,239,0.85)] mb-12">
                         縁側喫茶 むすび庵
                     </p>
-                    <div className="flex gap-4 justify-center flex-wrap">
-                        <a href="#menu"
-                            className="px-9 py-3.5 text-xs tracking-[0.25em] bg-[#C1603A] text-[#FAF6EF] border border-[#C1603A] hover:bg-transparent transition-all">
-                            メニューを見る
-                        </a>
-                        <a href="#access"
-                            className="px-9 py-3.5 text-xs tracking-[0.25em] text-[#FAF6EF] border border-[rgba(250,246,239,0.6)] hover:bg-[rgba(250,246,239,0.15)] transition-all">
-                            アクセス
-                        </a>
+                    <div className="flex flex-col items-center gap-3">
+                        <div className="flex gap-4">
+                            <a href="/#menu"
+                                className="px-9 py-3.5 text-xs tracking-[0.25em] bg-[#C1603A] text-[#FAF6EF] border border-[#C1603A] hover:bg-transparent transition-all">
+                                メニューを見る
+                            </a>
+                            <a href="/#access"
+                                className="px-9 py-3.5 text-xs tracking-[0.25em] text-[#FAF6EF] border border-[rgba(250,246,239,0.6)] hover:bg-[rgba(250,246,239,0.15)] transition-all">
+                                アクセス
+                            </a>
+                        </div>
+                        <Link to="/reservation"
+                            className="px-9 py-3.5 text-xs tracking-[0.25em] text-[#FAF6EF] border border-[rgba(250,246,239,0.6)] hover:bg-[rgba(250,246,239,0.15)] transition-all no-underline">
+                            ご予約
+                        </Link>
                     </div>
                 </div>
                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[10px] tracking-[0.3em] text-[rgba(250,246,239,0.6)]">
@@ -51,7 +58,7 @@ function Home() {
             </section>
 
             {/* About */}
-            <section className="py-24 px-8">
+            <section id="about" className="py-24 px-8">
                 <div className="max-w-[960px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                     <div className="aspect-[4/3] relative overflow-hidden">
                         <img
@@ -83,7 +90,7 @@ function Home() {
             </section>
 
             {/* Menu */}
-            <section className="py-24 px-8 bg-[#F3EDE2]">
+            <section id="menu" className="py-24 px-8 bg-[#F3EDE2]">
                 <div className="max-w-[1000px] mx-auto">
                     <div className="text-center mb-12">
                         <p className="text-xs tracking-[0.35em] text-[#7A5C42]">MENU</p>
@@ -120,7 +127,7 @@ function Home() {
             </section>
 
             {/* Gallery */}
-            <section className="py-24 px-8">
+            <section id="gallery" className="py-24 px-8">
                 <div className="max-w-[1000px] mx-auto">
                     <div className="text-center mb-12">
                         <p className="text-xs tracking-[0.35em] text-[#7A5C42]">GALLERY</p>
@@ -157,7 +164,7 @@ function Home() {
 
 
             {/* News */}
-            <section className="py-24 px-8 bg-[#F3EDE2]">
+            <section id="news" className="py-24 px-8 bg-[#F3EDE2]">
                 <div className="max-w-[720px] mx-auto">
                     <div className="text-center mb-12">
                         <p className="text-xs tracking-[0.35em] text-[#7A5C42]">NEWS</p>
@@ -178,7 +185,7 @@ function Home() {
             </section>
 
             {/* Access */}
-            <section className="py-24 px-8">
+            <section id="access" className="py-24 px-8">
                 <div className="text-center mb-12">
                     <p className="text-xs tracking-[0.35em] text-[#7A5C42]">ACCESS</p>
                     <span className="block font-serif text-[28px] text-[#2C1A0E] tracking-[0.15em] mt-2">アクセス</span>
