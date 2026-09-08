@@ -41,12 +41,12 @@ function Home() {
                                 メニューを見る
                             </a>
                             <a href="/#access"
-                                className="px-9 py-3.5 text-xs tracking-[0.25em] text-[#FAF6EF] border border-[rgba(250,246,239,0.6)] hover:bg-[rgba(250,246,239,0.15)] transition-all">
+                                className="px-9 py-3.5 text-xs tracking-[0.25em] text-[#FAF6EF] bg-[rgba(44,26,14,0.35)] border border-[rgba(250,246,239,0.9)] hover:bg-[rgba(250,246,239,0.15)] transition-all">
                                 アクセス
                             </a>
                         </div>
                         <Link to="/reservation"
-                            className="px-9 py-3.5 text-xs tracking-[0.25em] text-[#FAF6EF] border border-[rgba(250,246,239,0.6)] hover:bg-[rgba(250,246,239,0.15)] transition-all no-underline">
+                            className="px-9 py-3.5 text-xs tracking-[0.25em] text-[#FAF6EF] bg-[rgba(44,26,14,0.35)] border border-[rgba(250,246,239,0.9)] hover:bg-[rgba(250,246,239,0.15)] transition-all no-underline">
                             ご予約
                         </Link>
                     </div>
